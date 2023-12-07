@@ -2,7 +2,7 @@ function login() {
     var username = document.getElementById("loginUsername").value;
     var password = document.getElementById("loginPassword").value;
 
-    if (username === "user" && password === "pass") {
+    if (username === "function" && password === "varchar") {
       document.getElementById("loginForm").style.transform = "translateY(-100%)";
       document.getElementById("noteForm").style.display = "block";
     } else {
