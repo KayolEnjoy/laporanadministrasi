@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Catatan Pelanggan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <!-- Tulisan "Halaman Catatan Pelanggan" dihapus -->
+  </header>
+
+  <main>
+    <div id="loginForm">
+      <h2>Login</h2>
+      <label for="loginUsername">Username:</label>
+      <input type="text" id="loginUsername" required>
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" required>
+      <button onclick="login()">Login</button>
+    </div>
+
+    <div id="noteForm">
+      <h2>Catatan Pelanggan</h2>
+      <label for="name">Nama:</label>
+      <input type="text" id="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <label for="notePassword">Password:</label>
+      <input type="password" id="notePassword" required>
+      <label for="domain">Domain:</label>
+      <input type="text" id="domain" required>
+      <label for="telepon">Nomor Telepon:</label>
+      <input type="tel" id="telepon" required>
+      <label for="keterangan">Keterangan:</label>
+      <textarea id="keterangan"></textarea>
+      <label for="tanggal">Tanggal:</label>
+      <input type="date" id="tanggal" required>
+      <label for="periode">Periode:</label>
+      <input type="text" id="periode" required>
+      <label for="pembayaran">Pembayaran:</label>
+      <input type="text" id="pembayaran" required>
+      <label for="alamat">Alamat:</label>
+      <textarea id="alamat" required></textarea>
+      <button onclick="simpanCatatan()">Simpan Catatan</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </main>
+  <script src="control.js"></script>
+</body>
+</html>
