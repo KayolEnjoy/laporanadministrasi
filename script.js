@@ -15,7 +15,7 @@ function submitForm(event) {
     const keteranganPesanan = document.querySelector('input[name="keterangan_pesanan"]').value;
     const tanggalDimulai = document.querySelector('input[name="tanggal_dimulai"]').value;
     const tanggalBerakhir = document.querySelector('input[name="tanggal_berakhir"]').value;
-    const pembayaranVia = document.querySelector('input[name="pembayaran_via"]').value;
+    const pembayaranVia = document.querySelector('select[name="pembayaran_via"]').value;
     const namaRekening = document.querySelector('input[name="nama_rekening"]').value;
     const kodePembayaran = document.querySelector('input[name="kode_pembayaran"]').value;
     const pembayaranBerjumlah = document.querySelector('input[name="pembayaran_berjumlah"]').value;
