@@ -1,53 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halaman Catatan Pelanggan</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Catat Pelanggan</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init('w9YV4c_k0ab29gwf4'); // Ganti 'user_your_emailjs_public_key' dengan Public Key Email.js kamu
+    </script>
 </head>
 <body>
+    <div class="container">
+        <header>Laporan Pelanggan</header>
 
-  <header>
-    <!-- Tulisan "Halaman Catatan Pelanggan" dihapus -->
-  </header>
+        <form id="myForm" onsubmit="submitForm(event)">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Identitas</span>
 
-  <main>
-    <div id="loginForm">
-      <h2>Login</h2>
-      <label for="loginUsername">Username:</label>
-      <input type="text" id="loginUsername" required>
-      <label for="loginPassword">Password:</label>
-      <input type="password" id="loginPassword" required>
-      <button onclick="login()">Login</button>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Nama lengkap</label>
+                            <input type="text" placeholder="Siapa namanya" required name="nama_lengkap">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Alamat lengkap</label>
+                            <input type="text" placeholder="Dimana alamatnya" required name="alamat">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Nama Usaha</label>
+                            <input type="text" placeholder="Apa nama usahanya" required name="nama_usaha">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="number" placeholder="Berapa nomor teleponnya" required name="nomor_telepon">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Kelamin</label>
+                            <select required name="kelamin">
+                                <option disabled selected>Pilih Gender</option>
+                                <option value="Pria">Pria</option>
+                                <option value="Wanita">Wanita</option>
+                                <option value="Pasangan">Pasangan</option>
+                                <option value="TransGender">TransGender</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Keterangan lengkap</label>
+                            <input type="text" placeholder="Apakah ada keterangan" required name="keterangan">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Pemesanan</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Akun</label>
+                            <input type="email" placeholder="Masukan Emailnya" required name="email">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Password Akun</label>
+                            <input type="password" placeholder="Masukan Passwordnya" required name="password">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Judul/Tema pesanan</label>
+                            <input type="text" placeholder="Berikan judul/tema" required name="judul_tema">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Keterangan Pesanan</label>
+                            <input type="text" placeholder="Berikan Keterangan Pesanan" required name="keterangan_pesanan">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Tanggal Dimulai</label>
+                            <input type="date" placeholder="Tanggal Pembayaran dimulai" required name="tanggal_dimulai">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Tanggal Berakhir</label>
+                            <input type="date" placeholder="Tanggal Kadaluwarsanya" required name="tanggal_berakhir">
+                        </div>
+                    </div>
+
+                    <button class="nextBtn">
+                        <span class="btnText">Lanjut</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+            </div>
+
+            <div class="form second">
+                <div class="details address">
+                    <span class="title">Pembayaran</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Pembayaran Via</label>
+                            <select required name="pembayaran_via">
+                                <option disabled selected>Pilih Pembayaran</option>
+                                <option value="Bank">Bank</option>
+                                <option value="E-wallet">E-wallet</option>
+                                <option value="Cash">Cash</option>
+                                <option value="Cicilan/kredit">Cicilan/kredit</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Nama Rekening/e-wallet</label>
+                            <input type="text" placeholder="Nama Rekening/e-wallet" required name="nama_rekening">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Kode pembayaran</label>
+                            <input type="text" placeholder="Kode Pembayaran" required name="kode_pembayaran">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Pembayaran Berjumlah</label>
+                            <input type="number" placeholder="Masukan nominal" required name="pembayaran_berjumlah">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Saksi</label>
+                            <input type="text" placeholder="Siapa yang menerima" required name="saksi">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Periode</label>
+                            <input type="text" placeholder="Berapa bulan" required name="periode">
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Kembali</span>
+                        </div>
+                        
+                        <button class="submitBtn">
+                            <span class="btnText">Gass Kirim</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div> 
+            </div>
+        </form>
     </div>
 
-    <div id="noteForm">
-      <h2>Catatan Pelanggan</h2>
-      <label for="name">Nama:</label>
-      <input type="text" id="name" required>
-      <label for="email">Email:</label>
-      <input type="email" id="email" required>
-      <label for="notePassword">Password:</label>
-      <input type="password" id="notePassword" required>
-      <label for="domain">Domain:</label>
-      <input type="text" id="domain" required>
-      <label for="telepon">Nomor Telepon:</label>
-      <input type="tel" id="telepon" required>
-      <label for="keterangan">Keterangan:</label>
-      <textarea id="keterangan"></textarea>
-      <label for="tanggal">Tanggal:</label>
-      <input type="date" id="tanggal" required>
-      <label for="periode">Periode:</label>
-      <input type="text" id="periode" required>
-      <label for="pembayaran">Pembayaran:</label>
-      <input type="text" id="pembayaran" required>
-      <label for="alamat">Alamat:</label>
-      <textarea id="alamat" required></textarea>
-      <button onclick="simpanCatatan()">Simpan Catatan</button>
-      <button onclick="logout()">Logout</button>
-    </div>
-  </main>
-  <script src="control.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
