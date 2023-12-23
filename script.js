@@ -44,16 +44,46 @@ function submitForm(event) {
         periode: periode
     };
 
+    // Menampilkan SweetAlert "Mengirim Pesan..."
+    const sendingAlert = Swal.fire({
+        title: 'Mengirim laporan...',
+        text: 'Harap tunggu sebentar.',
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        willOpen: () => {
+            Swal.showLoading();
+        }
+    });
+
     // Kirim data melalui Email.js
     emailjs.send('service_ult3jh6', 'template_76d2fsr', data)
         .then(response => {
             console.log('Email terkirim dengan sukses:', response);
-            alert('Laporan terkirim!');
+            // Menutup SweetAlert "Mengirim Pesan..."
+            sendingAlert.close();
+
+            // Menampilkan SweetAlert "Laporan terkirim"
+            Swal.fire({
+                icon: 'success',
+                title: 'Laporan Terkirim!',
+                text: 'Terima kasih atas laporannya.',
+                confirmButtonColor: '#4070f4'
+            });
+
             // Tindakan atau logika lainnya setelah email terkirim
         })
         .catch(error => {
             console.error('Error saat mengirim email:', error);
-            alert('Laporan Gagal');
+            // Menutup SweetAlert "Mengirim Pesan..."
+            sendingAlert.close();
+
+            // Menampilkan SweetAlert "Laporan Gagal"
+            Swal.fire({
+                icon: 'error',
+                title: 'Laporan Gagal',
+                text: 'Gagal mengirim laporan. Silakan coba lagi nanti.',
+                confirmButtonColor: '#4070f4'
+            });
         });
 }
 
