@@ -111,7 +111,7 @@
                             <label>Pembayaran Via</label>
                             <select required name="pembayaran_via">
                                 <option disabled selected>Pilih Pembayaran</option>
-                                <option value="Bank">Bank</option>
+                                <option value="Qris">Bank</option>
                                 <option value="E-wallet">E-wallet</option>
                                 <option value="Cash">Cash</option>
                                 <option value="Cicilan/kredit">Cicilan/kredit</option>
@@ -120,8 +120,8 @@
                         </div>
 
                         <div class="input-field">
-                            <label>Nama Rekening/e-wallet</label>
-                            <input type="text" placeholder="Nama Rekening/e-wallet" required name="nama_rekening">
+                            <label>Nama E-wallet</label>
+                            <input type="text" placeholder="Nama E-wallet" required name="nama_rekening">
                         </div>
 
                         <div class="input-field">
@@ -131,7 +131,7 @@
 
                         <div class="input-field">
                             <label>Pembayaran Berjumlah</label>
-                            <input type="number" placeholder="Masukan nominal" required name="pembayaran_berjumlah">
+                            <input type="text" id="dengan-rupiah" placeholder="Masukan nominal" required name="pembayaran_berjumlah">
                         </div>
 
                         <div class="input-field">
